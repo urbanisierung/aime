@@ -1,0 +1,65 @@
+name: "Instruction Submission"
+description: "Propose a new instruction for the AIME directory."
+title: "[Instruction] <Concise Title>"
+labels:
+  - submission:instruction
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for contributing! Please fill out all required fields.
+  - type: input
+    id: title
+    attributes:
+      label: Instruction Title
+      description: Clear, action-oriented name.
+      placeholder: e.g. Optimize Copilot Prompts for TypeScript
+    validations:
+      required: true
+  - type: textarea
+    id: goal
+    attributes:
+      label: Goal / Outcome
+      description: What will the user achieve?
+      placeholder: Enable Copilot to produce more accurate framework-aware snippets.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps
+      description: Numbered or bullet steps (will be parsed). Prefix with `Steps:` if you want explicit detection.
+      placeholder: |
+        Steps:
+        1. Install the extension ...
+        2. Configure settings ...
+    validations:
+      required: true
+  - type: input
+    id: language
+    attributes:
+      label: Primary Language / Stack
+      description: Main tech (e.g. TypeScript, Python, Rust). Used for filtering.
+      placeholder: TypeScript
+    validations:
+      required: false
+  - type: input
+    id: tags
+    attributes:
+      label: Tags
+      description: Comma-separated tags (will normalize to kebab-case).
+      placeholder: productivity, prompts, tooling
+    validations:
+      required: false
+  - type: textarea
+    id: notes
+    attributes:
+      label: Additional Notes / Context
+      description: Optional rationale, caveats, or references.
+      placeholder: Derived from internal experimentation with Copilot multi-line prompts.
+    validations:
+      required: false
+  - type: markdown
+    attributes:
+      value: |
+        By submitting you agree to license this content under CC-BY-4.0 and to be attributed by your GitHub username unless you specify otherwise.

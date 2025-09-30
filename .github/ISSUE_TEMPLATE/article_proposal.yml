@@ -1,0 +1,54 @@
+name: "Article Proposal"
+description: "Propose an article for inclusion / curation."
+title: "[Article] <Proposed Title>"
+labels:
+  - submission:article
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Provide enough context so reviewers can assess relevance and uniqueness.
+  - type: input
+    id: url
+    attributes:
+      label: Source / Reference URL
+      description: Canonical article or key reference link.
+      placeholder: https://example.com/blog/deep-dive
+    validations:
+      required: true
+  - type: input
+    id: title
+    attributes:
+      label: Proposed Title
+      description: Short descriptive title (will be used for slug).
+      placeholder: Understanding Async Context Propagation
+    validations:
+      required: true
+  - type: textarea
+    id: summary
+    attributes:
+      label: One-sentence Summary
+      description: Elevator pitch for why this matters.
+      placeholder: Explains how context propagation enables safer request-scoped logging in distributed systems.
+    validations:
+      required: true
+  - type: textarea
+    id: value
+    attributes:
+      label: Why It’s Valuable
+      description: What unique insight or utility does this provide?
+      placeholder: Clarifies trade-offs in instrumentation libraries and provides reproducible benchmarks.
+    validations:
+      required: false
+  - type: input
+    id: tags
+    attributes:
+      label: Tags
+      description: Comma-separated tags (normalizes to kebab-case).
+      placeholder: observability, performance, tracing
+    validations:
+      required: false
+  - type: markdown
+    attributes:
+      value: |
+        By submitting you agree to license this content under CC-BY-4.0 (see repository documentation) and acknowledge potential editing for clarity.

@@ -1,0 +1,107 @@
+name: "VSCode Configuration"
+description: "Propose a VSCode configuration preset for AI/Copilot tools."
+title: "[VSCode Config] <Configuration Name>"
+labels:
+  - submission:vscode-config
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Submit curated VSCode settings focused on AI/GitHub Copilot features.
+  - type: input
+    id: title
+    attributes:
+      label: Configuration Name
+      description: Short descriptive name for this configuration preset.
+      placeholder: Copilot Power User Setup
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: What does this configuration do? What problem does it solve?
+      placeholder: Optimizes GitHub Copilot for maximum productivity with advanced chat features and agent mode.
+    validations:
+      required: true
+  - type: dropdown
+    id: category
+    attributes:
+      label: Category
+      description: Primary focus area of this configuration.
+      options:
+        - GitHub Copilot
+        - AI Assistance
+        - Accessibility
+        - Performance
+        - Productivity
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: settings
+    attributes:
+      label: Settings JSON
+      description: Complete VSCode settings object (must be valid JSON).
+      placeholder: |
+        {
+          "github.copilot.enable": {
+            "*": true
+          },
+          "github.copilot.editor.enableAutoCompletions": true,
+          "github.copilot.chat.useProjectTemplates": true
+        }
+      render: json
+    validations:
+      required: true
+  - type: dropdown
+    id: target_audience
+    attributes:
+      label: Target Audience
+      description: Who is this configuration designed for?
+      options:
+        - Beginners
+        - Intermediate
+        - Advanced
+        - All Users
+    validations:
+      required: true
+  - type: textarea
+    id: features
+    attributes:
+      label: Key Features
+      description: What specific features or capabilities does this enable?
+      placeholder: |
+        - Enables agent mode for autonomous coding
+        - Optimizes chat performance
+        - Configures workspace context awareness
+    validations:
+      required: false
+  - type: textarea
+    id: usage_tips
+    attributes:
+      label: Usage Tips
+      description: Any tips for getting the most out of this configuration?
+      placeholder: Best used in TypeScript projects with ESLint enabled...
+    validations:
+      required: false
+  - type: input
+    id: tags
+    attributes:
+      label: Tags
+      description: Comma-separated tags (e.g., copilot, ai, productivity).
+      placeholder: copilot, agent-mode, chat, productivity
+    validations:
+      required: false
+  - type: input
+    id: source_url
+    attributes:
+      label: Source URL (Optional)
+      description: Link to blog post, documentation, or reference.
+      placeholder: https://example.com/blog/copilot-config
+    validations:
+      required: false
+  - type: markdown
+    attributes:
+      value: |
+        By submitting you agree to license this configuration under CC-BY-4.0.

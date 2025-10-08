@@ -1,0 +1,110 @@
+name: "Job Listing"
+description: "Propose a job listing for inclusion in the directory."
+title: "[Job] <Job Title> at <Company>"
+labels:
+  - submission:job
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Provide complete job details. Only tech/AI-related positions will be considered.
+  - type: input
+    id: title
+    attributes:
+      label: Job Title
+      description: Official job title as it appears in the listing.
+      placeholder: Senior Software Engineer - AI/ML
+    validations:
+      required: true
+  - type: input
+    id: company
+    attributes:
+      label: Company Name
+      description: Name of the hiring company.
+      placeholder: Acme Corporation
+    validations:
+      required: true
+  - type: input
+    id: location
+    attributes:
+      label: Location
+      description: Job location (city, country, or "Remote", "Hybrid").
+      placeholder: San Francisco, CA / Remote
+    validations:
+      required: true
+  - type: dropdown
+    id: type
+    attributes:
+      label: Employment Type
+      description: Type of employment.
+      options:
+        - Full-time
+        - Part-time
+        - Contract
+        - Freelance
+        - Internship
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Job Description
+      description: Brief overview of the role and responsibilities.
+      placeholder: We're looking for an experienced engineer to join our AI platform team...
+    validations:
+      required: true
+  - type: textarea
+    id: requirements
+    attributes:
+      label: Requirements
+      description: Key qualifications and skills required.
+      placeholder: |
+        - 5+ years of experience with Python and machine learning
+        - Experience with LLMs and prompt engineering
+        - Strong understanding of distributed systems
+    validations:
+      required: false
+  - type: input
+    id: apply_url
+    attributes:
+      label: Application URL
+      description: Direct link to the job application page.
+      placeholder: https://company.com/careers/job-id
+    validations:
+      required: true
+  - type: input
+    id: company_url
+    attributes:
+      label: Company Website
+      description: Main company website URL.
+      placeholder: https://company.com
+    validations:
+      required: false
+  - type: input
+    id: salary_range
+    attributes:
+      label: Salary Range (Optional)
+      description: Salary range if disclosed (include currency).
+      placeholder: $120k - $180k USD
+    validations:
+      required: false
+  - type: input
+    id: tags
+    attributes:
+      label: Tags
+      description: Comma-separated tags (e.g., python, ml, ai, remote).
+      placeholder: python, machine-learning, llm, remote
+    validations:
+      required: false
+  - type: textarea
+    id: about_company
+    attributes:
+      label: About the Company (Optional)
+      description: Brief description of the company and its mission.
+      placeholder: Acme Corporation builds AI-powered tools for developers...
+    validations:
+      required: false
+  - type: markdown
+    attributes:
+      value: |
+        By submitting you confirm this is a legitimate job posting and agree to our content guidelines.
